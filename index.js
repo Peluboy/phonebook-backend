@@ -72,6 +72,10 @@ app.post('/api/persons', (req, res) => {
   res.json(newPerson);
 });
 
+app.get('/', (req, res) => {
+  res.send('<h1>Phonebook Backend API</h1><p>Available endpoints:</p><ul><li>GET /api/persons - List all persons</li><li>GET /api/persons/:id - Get person by ID</li><li>POST /api/persons - Add new person</li><li>DELETE /api/persons/:id - Delete person</li><li>GET /info - Show phonebook info</li></ul>');
+});
+
 app.get('/info', (req, res) => {
   const total = persons.length;
   const date = new Date();
